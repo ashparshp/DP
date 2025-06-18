@@ -6,7 +6,7 @@ int fib(int n) {
         return n;
     }
     int f1 = fib(n - 1);
-    int f2 = fib(n - 1);
+    int f2 = fib(n - 2);
     return f1 + f2;
 }
 
