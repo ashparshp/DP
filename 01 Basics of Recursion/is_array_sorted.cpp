@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-/* Approach-1 */
+/* Approach-1 TC: O(n) */
 bool isSorted(int arr[], int n) {
     if (n == 0 || n == 1) {
         return true;

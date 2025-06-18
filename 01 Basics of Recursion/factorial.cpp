@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 
+/* TC: O(n) */
 int fact(int n) {
     if (n == 0) {
         return 1;
