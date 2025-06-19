@@ -10,6 +10,21 @@ int powerOfANumber(int a, int n) {
     return (a * powerOfANumber(a, n-1));
 }
 
+/* TC: O(n) */
+int powerOfANumberOptimized(int a, int n) {
+    if (n == 1) {
+        return a;
+    }
+
+    int subProb = powerOfANumberOptimized(a, n/2);
+    int subProbSq = subProb * subProb;
+    if (n&1) {
+        return a * subProbSq;
+    }
+
+    return subProbSq;
+}
+
 int main() {
     int n, m;
     cout << "Number: ";
@@ -17,6 +32,7 @@ int main() {
     cout << "Power: ";
     cin >> m;
     cout << powerOfANumber(n,m);
+    cout << powerOfANumberOptimized(n,m);
 
     return 0;
 }
