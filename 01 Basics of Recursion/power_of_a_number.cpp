@@ -10,7 +10,7 @@ int powerOfANumber(int a, int n) {
     return (a * powerOfANumber(a, n-1));
 }
 
-/* TC: O(n) */
+/* TC: O(logn) */
 int powerOfANumberOptimized(int a, int n) {
     if (n == 1) {
         return a;
