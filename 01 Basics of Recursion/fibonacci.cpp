@@ -1,20 +1,25 @@
 #include <iostream>
 using namespace std;
+int call_count = 0;
+vector<int> memo;
 
-/* TC: O(2^n)*/
 int fib(int n) {
-    if (n == 0 || n == 1) {
-        return n;
-    }
-    int f1 = fib(n - 1);
-    int f2 = fib(n - 2);
-    return f1 + f2;
+    call_count++;
+
+    if (n <= 2) return 1;
+
+    if (memo[n] != -1) return memo[n];
+
+    return memo[n] = fib(n - 1) + fib(n - 2);
 }
 
 int main() {
     int n;
     cout << "Input: ";
     cin >> n;
+    memo.resize(n+1, -1);
+    
     cout << fib(n) << endl;
+    cout << call_count;
     return 0;
 }
